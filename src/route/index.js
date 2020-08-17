@@ -1,15 +1,14 @@
-import Home from "../page/home";
-import Login from "../page/login";
+import { lazy } from 'react';
 
 const routes = [
 	{
-		path: "/",
-		component: Home,
+		path: '/home',
+		component: lazy(() => import('../page/home'))
 	},
 	{
-		path: "/login",
-		component: Login,
-	},
+		path: '/login',
+		component: lazy(() => import('../page/login'))
+	}
 ];
 
 export default routes;
