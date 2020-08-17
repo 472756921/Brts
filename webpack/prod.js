@@ -24,7 +24,7 @@ module.exports = (env, argv) => {
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         title: "Benson",
-        template: "./index.ejs",
+        template: "./index.html",
         filename: "index.html",
       }),
     ],

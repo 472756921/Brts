@@ -3,7 +3,7 @@ import Login from "../page/login";
 
 const routes = [
 	{
-		path: "/home",
+		path: "/",
 		component: Home,
 	},
 	{

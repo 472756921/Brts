@@ -12,7 +12,6 @@ app.set("views", path.join(__dirname, "../"));
 app.get("/*", (req, res) => {
   res.render("index", {
     content: renderToString(server_build.RenderSSR(req)),
-    link: '<link rel="stylesheet" href="./main.css" />',
   });
 });
 

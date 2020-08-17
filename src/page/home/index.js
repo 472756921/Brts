@@ -1,13 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+const LogoImg = require("../../assets/img/benson.jpg");
 
 const Home = () => {
-	return (
-		<div>
-			Home
-			<Link to="/login">123</Link>
-		</div>
-	);
+  return (
+    <div>
+      <img src={LogoImg} width="200" />
+      <div>this is BRTS</div>
+    </div>
+  );
 };
 
 export default Home;
