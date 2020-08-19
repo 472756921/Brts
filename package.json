@@ -1,7 +1,7 @@
 {
-	"name": "ssr",
+	"name": "brts",
 	"version": "1.0.0",
-	"description": "",
+	"description": "react通用脚手架",
 	"main": "index.js",
 	"scripts": {
 		"lint": "eslint --ext .js --ext .jsx src",
