@@ -1,5 +1,13 @@
+import { stringifyQuery } from '../../utils';
+
 const request = async (options) => {
 	let url = options?.url;
+	const init = {
+		headers: {
+			Authorization: '',
+			...options.config?.headers
+		}
+	};
 
 	if (options.method === 'GET') {
 		if (options.data) url += stringifyQuery(options.data);
@@ -10,8 +18,12 @@ const request = async (options) => {
 			init.body = JSON.stringify(options.data);
 		}
 	}
-
 	const response = await fetch(url, init);
+	if (response.status === 200) {
+		return await response.json();
+	} else {
+		throw response;
+	}
 };
 
 export function get(url, data, config) {

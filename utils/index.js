@@ -1,4 +1,7 @@
 export const stringifyQuery = (data) => {
-    
-	return '';
+	let params = '';
+	for (let key in data) {
+		params += `${key}=${data.key}&`;
+	}
+	return params;
 };

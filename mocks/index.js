@@ -4,15 +4,10 @@ const proxy = {
 		{ id: 1, username: 'kenny', sex: 6 },
 		{ id: 2, username: 'kenny', sex: 6 }
 	],
-	'POST /api/login/account': (req, res) => {
-		const { password, username } = req.body;
-		if (password === '888888' && username === 'admin') {
-			return res.send({
-				status: 'ok',
-				code: 0,
-				token: 'sdfsdfsdfdsf',
-				data: { id: 1, username: 'kenny', sex: 6 }
-			});
+	'POST /api/user/info': (req, res) => {
+		const { userId } = req.body;
+		if (userId === 2) {
+			return res.send({ id: 2, username: 'KOB', sex: 6 });
 		} else {
 			return res.send({ status: 'error', code: 403 });
 		}
