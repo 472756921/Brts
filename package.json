@@ -4,12 +4,18 @@
 	"description": "react通用脚手架",
 	"main": "index.js",
 	"scripts": {
-		"lint": "eslint --ext .js --ext .jsx src",
+		"lint": "eslint --ext .js --ext .jsx src/",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "webpack --mode=production --config webpack/prod.js",
 		"start": "webpack-dev-server --config webpack/dev.js --colors --watch",
 		"server": "node server/index.js",
 		"sbuild": "webpack --config webpack/server.js"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run lint",
+			"pre-push": "npm run lint"
+		}
 	},
 	"author": "",
 	"license": "ISC",
@@ -29,16 +35,17 @@
 		"eslint": "^7.6.0",
 		"eslint-plugin-react": "^7.20.6",
 		"express": "^4.17.1",
+		"file-loader": "^6.0.0",
 		"html-webpack-plugin": "^4.3.0",
+		"husky": "^4.2.5",
 		"mini-css-extract-plugin": "^0.10.0",
+		"mocker-api": "^2.3.5",
 		"style-loader": "^1.2.1",
 		"url-loader": "^4.1.0",
 		"webpack": "^4.43.0",
 		"webpack-cli": "^3.3.12",
 		"webpack-dev-server": "^3.11.0",
-		"webpack-merge": "^5.0.9",
-		"mocker-api": "^2.3.5",
-		"file-loader": "^6.0.0"
+		"webpack-merge": "^5.0.9"
 	},
 	"dependencies": {
 		"react": "^16.13.1",
